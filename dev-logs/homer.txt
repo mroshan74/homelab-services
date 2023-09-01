@@ -1,0 +1,10 @@
+homer -> easy access links dashboard
+
+github repo -> https://github.com/bastienwirtz/homer
+yt video -> https://www.youtube.com/watch?v=9iTPm45EmxM
+
+Can't write to host due to write permission issue
+chown -R 1000:1000 /your/assets/folder/
+https://github.com/bastienwirtz/homer/blob/main/docs/troubleshooting.md#my-docker-container-refuse-to-start--is-stuck-at-restarting
+
+if chown doesn't work, run it on sudo

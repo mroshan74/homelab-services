@@ -1,0 +1,11 @@
+wireguard
+
+Guides:
+docker-compose -> https://github.com/JamesTurland/JimsGarage/blob/main/Wireguard/docker-compose.yml
+yt-video -> https://www.youtube.com/watch?v=C59dOinNurk
+
+Setup:
+1. Add a stack for wireguard docker-compose in portainer.
+2. Add port-forwarding for the wireguard in the ISP router that is 80 -> 51821
+3. Add a A record or CNAME pointing to the server public ip, takes time to propogate.
+4. Add an entry in nginx proxy manager with same A/CNAME record to route specific internal ip running via docker container.

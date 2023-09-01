@@ -1,0 +1,33 @@
+ubuntu desktop vm post installation
+
+1. Run guest-agent for vm control
+
+sudo apt install qemu-guest-agent
+systemctl status qemu-guest-agent.service
+sudo systemctl start qemu-guest-agent.service
+
+2. Prepare of ssh remote access
+https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-20-04/#:~:text=By%20default%2C%20when%20Ubuntu%20is,on%20Ubuntu%20is%20fairly%20straightforward.&text=When%20prompted%2C%20enter%20your%20password,to%20continue%20with%20the%20installation.&text=Press%20q%20to%20get%20back%20to%20the%20command%20line%20prompt.
+
+sudo ufw status
+sudo ufw enable
+sudo apt install openssh-server -y
+sudo ufw allow ssh
+
+3. Enable remote desktop protocol
+
+sudo apt install xrdp -y
+sudo systemctl enable --now xrdp
+sudo ufw allow from any to any port 3389 proto tcp
+
+sudo apt update -y && sudo apt upgrade -y
+
+4. (xRDP) Desktop looks different when connecting remotely
+Note: Do this after xrdp is installed and then reboot, rdp into the vm and excute the code, then reboot again.
+https://askubuntu.com/questions/1233088/xrdp-desktop-looks-different-when-connecting-remotely
+
+cat <<EOF > ~/.xsessionrc
+export GNOME_SHELL_SESSION_MODE=ubuntu
+export XDG_CURRENT_DESKTOP=ubuntu:GNOME
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+EOF

@@ -1,0 +1,15 @@
+Proxmox
+
+1. Download latest iso from proxmox
+2. Download rufus
+3. Burn iso to USB using rufus
+4. Enable virtualization in BIOS -> [MSI-BIOS -> OC -> advanced -> SE] 
+5. Install proxmox
+
+Post-install -> https://tteck.github.io/Proxmox/
+docker -> https://docs.docker.com/engine/install/ubuntu/
+portainer -> https://docs.portainer.io/start/install-ce/server/docker/linux
+
+
+fix docker issue
+https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket
