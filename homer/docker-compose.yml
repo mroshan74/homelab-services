@@ -1,0 +1,14 @@
+version: "2"
+services:
+  homer:
+    image: b4bz/homer
+    #To build from source, comment previous line and uncomment below
+    #build: .
+    container_name: homer
+    volumes:
+      - /home/portainer/local/homer:/www/assets
+    ports:
+      - 8080:8080
+    user: "${UID}:${GID}" # default
+    environment:
+      - INIT_ASSETS=1 # default
