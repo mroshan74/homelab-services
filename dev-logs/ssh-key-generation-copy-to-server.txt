@@ -1,0 +1,19 @@
+ssh-key generation
+
+https://man7.org/linux/man-pages/man1/ssh-keygen.1.html
+
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/homeserver -C mroshan.dev@gmail.com
+
+-o option
+-a rounds
+-t dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa
+-f input_keyfile
+-C comment
+
+https://linux.die.net/man/1/ssh-copy-id
+
+ssh-copy-id -i ~/.ssh/homeserver node1@192.168.1.40
+
+-i identity file
+
+ssh -i ~/.ssh/homeserver node1@192.168.1.40

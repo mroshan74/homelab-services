@@ -1,0 +1,9 @@
+docker-container-use
+
+using nodejs image to create working environment
+https://stackoverflow.com/questions/72347675/create-node-js-app-usin-docker-without-installing-node-on-host-machine/72348094#72348094
+docker run -it --rm -v $(pwd):/app -p 3000:3000 node /bin/bash
+
+docker-registry
+https://www.baeldung.com/ops/docker-registry-api-list-images-tags
+https://docs.docker.com/registry/deploying/

@@ -1,0 +1,7 @@
+server-issue-fixes
+
+*debug ssh issue due to configuration error on editing sshd_config
+https://askubuntu.com/a/1211521/1730122
+
+sudo nano /etc/ssh/sshd_config
+sudo /usr/sbin/sshd -T

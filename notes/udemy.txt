@@ -1,0 +1,13 @@
+Udemy courses to try
+
+https://www.udemy.com/course/devops-linux/
+https://www.udemy.com/course/react-native-the-beginner-guide/
+https://www.udemy.com/course/learn-docker/
+
+https://www.udemy.com/course/mern-stack-react-native-redux/
+
+https://www.udemy.com/course/linux-administration-bootcamp/
+https://www.udemy.com/course/the-complete-devops-bootcamp/
+https://www.udemy.com/course/learn-kubernetes/
+
+https://www.udemy.com/course/decodingdevops/

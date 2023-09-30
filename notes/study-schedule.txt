@@ -1,0 +1,17 @@
+study schedule
+
+--- Topics to cover ---
+
+-- Batch 1 --
+1. Linux Administration: The Complete Linux Bootcamp for 2023						21   hrs
+2. Asp.Net Core 7 (.NET 7) | True Ultimate Guide									80.5 hrs
+3. Your 2nd JavaScript Course: Advanced Concepts and Algorithms						9.5  hrs
+4. Ansible for the Absolute Beginner - Hands-On - DevOps							2	 hrs
+5. Ultimate C# Masterclass for 2023													40	 hrs
+6. Ansible Advanced - Hands-On - DevOps												4    hrs
+
+-- Batch 2 --
+1. Docker Mastery: with Kubernetes +Swarm from a Docker Captain						21   hrs
+2. Software Architecture & Technology of Large-Scale Systems						25.5 hrs
+3. JavaScript Data Structures & Algorithms + LEETCODE Exercises						7    hrs
+5. The Linux Command Line Bootcamp: Beginner To Power User							16	 hrs

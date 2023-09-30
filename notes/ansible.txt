@@ -1,0 +1,7 @@
+ansible
+
+-test ansible connection
+ansible all -m ping
+
+-apply changes
+ansible-playbook run.yml -K

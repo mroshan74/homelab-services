@@ -1,0 +1,19 @@
+bash shortcuts
+
+ctrl + l clear
+ctrl + c intrupt process
+ctrl + d exit shell
+ctrl + u cut line
+ctrl + a cursor at beginning
+ctrl + e cursor at end
+ctrl + alt + t opens terminal
+history
+!10 jumb to history number command
+
+sudo su -
+passwd
+
+
+FILE SYS
+
+cat /var/log/auth.log

@@ -1,0 +1,5 @@
+https://www.whatsmyip.org/port-scanner/server/
+
+https://portainer-templates.as93.net/
+https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json
+https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json

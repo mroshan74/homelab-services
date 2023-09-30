@@ -1,0 +1,26 @@
+docker commands
+
+docker ps
+docker ps -a
+docker container prune
+
+docker images
+docker image list
+
+docker images --digests
+docker image list --digests <imagename>
+
+docker pull <imagename>
+docker run -it <imagename>
+docker run -it --rm <imagename>
+
+docker rmi <imagename>
+docker image rm <imagename>
+docker image remove <imagename>
+
+docker history <imagename>
+
+docker run -d --rm -p 8080:80 -v /home/mroshan74/websites/app1/:/usr/share/nginx/html/ nginx
+docker exec -it <imageid> bash
+
+docker system prune 
