@@ -1,0 +1,14 @@
+Execute any command as a normal user without sudo
+
+References
+https://unix.stackexchange.com/questions/276474/how-can-i-execute-any-command-as-a-normal-user-without-sudo
+
+1. Add these to the end of /etc/sudoers
+	sudo nano /etc/sudoers
+	<USERNAME> HOST_NAME = (<root>) NOPASSWD: /usr/bin/nerdctl
+
+2. Add these to your ~/.bashrc
+	alias nerdctl='sudo nerdctl'
+
+3. Reload the startup config for the current session.
+	source ~/.bashrc

@@ -1,0 +1,12 @@
+proxmox-vm-tiers
+
+p1.nano = v1, r2
+p1.medium = v1, r4
+p1.large = v1, r8
+
+p2.medium = v2, r4
+p2.large = v2, r8
+
+p4.medium = v4, r4
+p4.large = v4, r8
+p4.xlarge = v4, r16

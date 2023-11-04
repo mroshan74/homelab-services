@@ -1,0 +1,53 @@
+Learn K8S setup - bareborn - learning environment
+Using containerd, nerdctl, kubeadm, flannel
+
+https://www.guide2wsl.com/nerdctl/
+1. Install containerd
+	$ sudo apt install containerd -y
+	
+2. Download the nerdctl binary from https://github.com/containerd/nerdctl to downloads/
+	$ wget https://github.com/containerd/nerdctl/releases/download/v1.6.2/nerdctl-full-1.6.2-linux-amd64.tar.gz
+	$ sudo tar Cxzvvf /usr/local/bin nerdctl-full-1.6.2-linux-amd64.tar.gz
+	$ sudo mkdir -p ~/.local && sudo tar Cxzvvf ~/.local nerdctl-full-1.6.2-linux-amd64.tar.gz
+
+3. Run the commands
+	$ cd .local/bin
+	$ sudo ln -s ${PWD}/nerdctl /usr/local/bin/nerdctl
+	$ sudo ln -s /usr/local/bin/bin/nerdctl /usr/local/bin/nerdctl
+	$ systemctl enable --now containerd
+	$ systemctl status containerd
+	$ nerdctl run -d --name nginx -p 80:80 nginx:alpine
+	
+Issue#0: The service refusing to connect cgroupv2 issue in ubuntu > 18.04 with containerd
+	https://stackoverflow.com/questions/55571566/unable-to-bring-up-kubernetes-api-server
+	$ sudo -i
+	$ mkdir -p /etc/containerd/ && sudo touch /etc/containerd/config.toml
+	$ containerd config default | tee /etc/containerd/config.toml
+	$ sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml  
+	$ service containerd restart
+	$ service kubelet restart  
+	
+Issue#1: kubelet error, status stuck on 'Active: activating (auto-restart)'
+	https://serverfault.com/questions/1102040/kubelet-error-status-stuck-on-active-activating-auto-restart
+	$ sudo swapoff -a
+	
+Issue#2:Forwarding IPv4 and letting iptables see bridged traffic
+	https://kubernetes.io/docs/setup/production-environment/container-runtimes/#install-and-configure-prerequisites
+	
+4. Install kubeadm from 
+	https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+	https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
+
+	$ sudo kubeadm init
+	$ sudo kubeadm init --pod-network-cidr "10.244.0.0/16"
+	$ kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+	$ sudo kubeadm reset
+	
+	$ mkdir -p $HOME/.kube
+	$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+	$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+	
+	$ kubectl describe node control-plane | more
+	$ kubectl taint node control-plane node-role.kubernetes.io/control-plane:NoSchedule-
+	$ kubectl get nodes
+	$ kubeadm token create --print-join-command

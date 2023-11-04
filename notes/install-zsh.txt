@@ -1,0 +1,29 @@
+install-zsh
+
+guides: 
+1. installation https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+2. oh-my-zsh https://github.com/ohmyzsh/ohmyzsh
+3. themes https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
+sudo apt install zsh -y
+chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+ref - https://github.com/ohmyzsh/ohmyzsh/issues/5700
+# Uncomment the following line to disable auto-setting terminal title.
+DISABLE_AUTO_TITLE="true"
+echo -e "\033];${USER}@${HOST}\007"
+
+Comment line for af-magic in to remove right user@host
+cd ~/.oh-my-zsh/themes
+sudo nano af-magic.zsh-theme
+RPS1+=" ${FG[237]}%n@%m%{$reset_color%}"
+
+autoload -Uz zsh-newuser-install
+zsh-newuser-install -f
+
+check current shell
+echo $SHELL
+echo $0
+
+

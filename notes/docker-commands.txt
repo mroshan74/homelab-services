@@ -24,3 +24,10 @@ docker run -d --rm -p 8080:80 -v /home/mroshan74/websites/app1/:/usr/share/nginx
 docker exec -it <imageid> bash
 
 docker system prune 
+
+# build
+docker image build -t <imagename>:<tag> <path>
+docker image build -t mroshan/demo .
+
+docker run --rm -d -p 80:80 mroshan/demo
+docker exec -it <imageid> bash
