@@ -12,6 +12,7 @@ Notes:-
 	b. Zone -> Zone -> Read
 	c. Zone -> DNS -> Edit
 4. Add a CNAME and A record with proxy OFF, can be any, this helps Let's Encrypt to query and safe validate the existance of the domain.
+5. The access token is only generated once, please save it ! or create a nw one next time.
 
 In Nginx Proxy Manager.
 1. Add ssl certificate

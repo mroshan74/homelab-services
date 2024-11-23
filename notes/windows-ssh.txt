@@ -1,0 +1,4 @@
+windows-ssh
+
+ssh -i "C:/Users/mrosh/.ssh/lxc" ubuntu@10.0.0.40
+ 

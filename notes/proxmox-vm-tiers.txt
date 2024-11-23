@@ -7,6 +7,9 @@ p1.large = v1, r8
 p2.medium = v2, r4
 p2.large = v2, r8
 
-p4.medium = v4, r4
-p4.large = v4, r8
-p4.xlarge = v4, r16
+p4.medium = v4, r4, 32g
+p4.large = v4, r8, 32g
+p4.xlarge = v4, r16, 64g
+
+p6.medium = v6, r16, 64g
+p6.large = v6, r32, 128g
